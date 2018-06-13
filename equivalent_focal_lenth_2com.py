@@ -2,28 +2,28 @@ from tkinter import * # импортируем библиотеку
 import math
 
 # создаем окно с названием и заданными размерами
-root = Tk()
-root.title("Еквівалентна оптична сила та фокусна відстань (2 компонента)")
-root.geometry("600x150")
-root.update()
+root1 = Tk()
+root1.title("Еквівалентна оптична сила та фокусна відстань (2 компонента)")
+root1.geometry("600x150")
+root1.update()
 
  # поле для ввода фокусного расстояния первого компонента f1
-f1 = Entry(root, width = 50)
+f1 = Entry(root1, width = 50)
 f1.grid(row=0, column=1)
 
 # поле для ввода фокусного расстояния первого компонента f2
-f2 = Entry(root, width = 50)
+f2 = Entry(root1, width = 50)
 f2.grid(row=1, column=1)
 
 # поле для ввода расстояния между линзами
-d = Entry(root, width = 50)
+d = Entry(root1, width = 50)
 d.grid(row=2, column=1)
 
 
 # поле для вывода результатов расчета эквивалентной оптической силы Ф
-output = Text(root, bg="#28b", fg="#ccc", font=("Arial 11"), width=30, height=1)
+output = Text(root1, bg="#28b", fg="#ccc", font=("Arial 11"), width=30, height=1)
 output.grid(row=3, column=1)
-output_f = Text(root, bg="#28b", fg="#ccc", font="Arial 11", width=30, height=1)
+output_f = Text(root1, bg="#28b", fg="#ccc", font="Arial 11", width=30, height=1)
 output_f.grid(row=4, column=1)
 
 
@@ -64,14 +64,14 @@ def handler():
 
 
 # создаем строки указатели вводимых данных и полученных результатов
-label_f1_text = Label(text="Фокусна відстань першого компонента, [мм]")
-label_f2_text = Label(text="Фокусна відстань другого компонента, [мм]")
-label_d_text = Label(text="Відстань між компонентами, [мм]")
-label_F_ekv_text = Label(text="Еквівалентна оптична сила, Ф [дптр]")
-label_f_ekv_text = Label(text="Еквівалента фокусна відстань, f` [мм]")
+label_f1_text = Label(root1, text="Фокусна відстань першого компонента, [мм]")
+label_f2_text = Label(root1, text="Фокусна відстань другого компонента, [мм]")
+label_d_text = Label(root1, text="Відстань між компонентами, [мм]")
+label_F_ekv_text = Label(root1, text="Еквівалентна оптична сила, Ф [дптр]")
+label_f_ekv_text = Label(root1, text="Еквівалента фокусна відстань, f` [мм]")
 
 # создаем кнопку для запуска расчета
-button_calc = Button(root, text="Розрахувати", command=handler).grid(row=6, column=1, padx=(10,0))
+button_calc = Button(root1, text="Розрахувати", command=handler).grid(row=6, column=1, padx=(10,0))
 
 # размещаем строки и кнопки в окне
 label_f1_text.grid(row=0, column=0, sticky=W)
@@ -82,4 +82,4 @@ label_f_ekv_text.grid(row=4, column=0, sticky=W)
 # button_clear.grid(row=1, column=3)
 
 # Включаем постоянную отрисовку окна
-root.mainloop()
+root1.mainloop()
